@@ -1,0 +1,17 @@
+# .root_backup_excludes
+
+/dev
+/etc/fstab
+/home
+/lib/modules/*/volatile/.mounted
+/media
+/mnt
+/proc
+/run
+/snap
+/sys
+/tmp
+/var/cache/apt/archives
+/var/lock
+/var/run
+/var/tmp

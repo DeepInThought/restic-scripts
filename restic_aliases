@@ -1,0 +1,11 @@
+### Restic Backup Alias ###
+#? Add this to your .bash_aliases or call this file from your .bashrc 
+# echo "Using restic for backups, uses restic user see https://restic.readthedocs.io/en/latest/080_examples.html#backing-up-your-system-without-running-restic-as-root"
+alias bu='sudo -u restic /home/restic/bin/restic-backup.sh'
+alias bu-homefolder='sudo /bin/su -c "/home/restic/bin/restic-backup.sh -c ${BU_HOMEFOLDER_CONF} backup" - restic'
+alias bu-corefolders='sudo /bin/su -c "/home/restic/bin/restic-backup.sh -c ${BU_COREFOLDERS_CONF} backup" - restic'
+alias bu-mnt-backup='sudo -u restic ~restic/bin/restic -r ${RESTIC_REPOSITORY} mount --allow-other ${RESTIC_MOUNTPOINT} --password-file ${RESTIC_PASSWORD_FILE} || echo -e "ERROR: Please set or correct.\nRESTIC_REPOSITORY=${RESTIC_REPOSITORY:-SET_A_VALID_REPOSITORY_PATH}\nRESTIC_MOUNTPOINT=${RESTIC_MOUNTPOINT:-SET_A_VALID_MOUNTPOINT}\n$(mountpoint ${RESTIC_MOUNTPOINT})\n"'
+alias restic-user='sudo -u restic /home/restic/bin/restic -r ${RESTIC_REPOSITORY} --password-file ${RESTIC_PASSWORD_FILE}'
+alias restic-env-home='echo -e "Sourcing from ${BU_HOMEFOLDER_CONF}" && source ${BU_HOMEFOLDER_CONF} && printenv | grep -i RESTIC_'
+alias restic-env-core='echo -e "Sourcing from ${BU_COREFOLDERS_CONF}" && source ${BU_COREFOLDERS_CONF} && printenv | grep -i RESTIC_'
+############################
