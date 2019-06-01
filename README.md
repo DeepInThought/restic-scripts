@@ -20,6 +20,7 @@ sudo ./restic-install.sh
 + Add [restic_aliases](restic_aliases) and [env.local](env.local) below to your ~/.bashrc or ~/.bash_aliases to simplify calling of restic.
 
 ```bash
+# Make sure you update the env.local to your username.
 if [ -f ~/.scripts/restic-scripts/env.local ]; then
     . ~/.scripts/restic-scripts/env.local
 fi
