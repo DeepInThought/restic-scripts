@@ -17,9 +17,13 @@ chmod +x restic-install.sh
 sudo ./restic-install.sh
 ```
 
-+ Add the [restic_aliases](restic_aliases) snipplet below to your ~/.bashrc or ~/.bash_aliases to simplify calling of restic.
++ Add [restic_aliases](restic_aliases) and [env.local](env.local) below to your ~/.bashrc or ~/.bash_aliases to simplify calling of restic.
 
 ```bash
+if [ -f ~/.scripts/restic-scripts/env.local ]; then
+    . ~/.scripts/restic-scripts/env.local
+fi
+
 if [ -f ~/.scripts/restic-scripts/restic_alises ]; then
     . ~/.scripts/restic-scripts/restic_aliases
 fi
