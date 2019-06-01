@@ -17,7 +17,7 @@ chmod +x restic-install.sh
 sudo ./restic-install.sh
 ```
 
-+ Add the [restic_alises](restic_alises) snipplet below to your ~/.bashrc or ~/.bash_aliases to simplify calling of restic.
++ Add the [restic_alises](restic_aliases) snipplet below to your ~/.bashrc or ~/.bash_aliases to simplify calling of restic.
 
 ```bash
 if [ -f ~/.scripts/restic-scripts/restic_alises ]; then
@@ -37,19 +37,34 @@ Keep note of the password used!  Add it to the [.backup_secrets](.backup_secrets
 chmod 640 .backup_secrets
 ```
 
-+ Update the .conf files to match your settings.  I split home and core files into two different backups, but this is not required.
-
-+ Run backups via aliases.
++ Update the [restic-homedir.conf](restic-homedir.conf) and [restic-corefolders.conf](restic-corefolders.conf) files to match your settings.  I split home and core files into two different backups, but this is not required.
+  + SCRIPT_DIR is used for all of the files.  Keep default to align with the repository defaults.
+  + GET_LATEST_HOME_EXCLUDES scans rsync best practice for home folder backup excludes.
+  + RESTIC_MOUNTPOINT is the directory used when mounting backups for viewing.  Please not you will need to create the mountpoint first, see below.
+  
+  ```bash
+  sudo mkdir -p /mnt/restic
+  ```
+  
+  + RESTIC_PASSWORD_FILE is the location of the backup password.
+  + RESTIC_PATH is wehre the executable is located.
+  + RESTIC_REPOSITORY is where you did the initialize of the backup.
+  + BACKUP_EXCLUDE_FILE is used for execludes.
+  + BACKUP_PATHS is what folders are included for backups.
+  + RETENTION_POLICY is how long to keep backups.
+  + SNAPSHOT_TITLE should reflect nature of the backup.
+  
++ Run backups via [restic_alises](restic_aliases).
 
 ```bash
 bu-homefolder
 bu-corefolders
 ```
 
-+ View backups
++ Mount backups
 
 ```bash
-# Set the environment to the home .conf and mount.
+# Set the environment to the home.conf and mount.
 restic-env-home
 bu-mnt-backup
 ```
