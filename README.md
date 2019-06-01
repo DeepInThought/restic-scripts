@@ -17,7 +17,7 @@ chmod +x restic-install.sh
 sudo ./restic-install.sh
 ```
 
-+ Add the [restic_alises](restic_aliases) snipplet below to your ~/.bashrc or ~/.bash_aliases to simplify calling of restic.
++ Add the [restic_aliases](restic_aliases) snipplet below to your ~/.bashrc or ~/.bash_aliases to simplify calling of restic.
 
 ```bash
 if [ -f ~/.scripts/restic-scripts/restic_alises ]; then
@@ -54,7 +54,7 @@ chmod 640 .backup_secrets
   + RETENTION_POLICY is how long to keep backups.
   + SNAPSHOT_TITLE should reflect nature of the backup.
   
-+ Run backups via [restic_alises](restic_aliases).
++ Run backups via [restic_aliases](restic_aliases).
 
 ```bash
 bu-homefolder
