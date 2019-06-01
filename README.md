@@ -47,9 +47,9 @@ chmod 640 .backup_secrets
   ```
   
   + RESTIC_PASSWORD_FILE is the location of the backup password.
-  + RESTIC_PATH is wehre the executable is located.
+  + RESTIC_PATH is where the executable is located.
   + RESTIC_REPOSITORY is where you did the initialize of the backup.
-  + BACKUP_EXCLUDE_FILE is used for execludes.
+  + BACKUP_EXCLUDE_FILE is used for excludes like [.backup_excludes](.backup_excludes).
   + BACKUP_PATHS is what folders are included for backups.
   + RETENTION_POLICY is how long to keep backups.
   + SNAPSHOT_TITLE should reflect nature of the backup.
