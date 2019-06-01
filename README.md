@@ -68,3 +68,18 @@ bu-corefolders
 restic-env-home
 bu-mnt-backup
 ```
+
++ Run restic commands manually via restic-user alias
+
+```bash
+# Set the environment to the home.conf and run restic manually.
+restic-env-home
+restic-user --help
+# View size of raw-data backup
+restic-user stats --mode raw-data
+# Run restic update
+$ restic-user self-update
+writing restic to /home/restic/bin/restic
+find latest release of restic at GitHub
+restic is up to date
+```
